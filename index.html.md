@@ -1,0 +1,130 @@
+valentine.html  
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <title>For Leilah 💖</title>  
+  <style>  
+    body {  
+      margin: 0;  
+      min-height: 100vh;  
+      font-family: 'Segoe UI', sans-serif;  
+      background: linear-gradient(to bottom right, #ff758c, #ff7eb3);  
+      display: flex;  
+      align-items: center;  
+      justify-content: center;  
+      color: white;  
+    }  
+  
+    .card {  
+      background: rgba(255, 255, 255, 0.15);  
+      padding: 30px;  
+      border-radius: 20px;  
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);  
+      max-width: 420px;  
+      text-align: center;  
+      backdrop-filter: blur(10px);  
+    }  
+  
+    img {  
+      width: 100%;  
+      border-radius: 15px;  
+      margin-bottom: 20px;  
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);  
+    }  
+  
+    h1 {  
+      font-size: 2.3em;  
+      margin-bottom: 10px;  
+    }  
+  
+    p {  
+      font-size: 1.1em;  
+      margin-bottom: 25px;  
+      line-height: 1.5;  
+    }  
+  
+    button {  
+      padding: 12px 28px;  
+      font-size: 1em;  
+      border: none;  
+      border-radius: 30px;  
+      cursor: pointer;  
+      margin: 8px;  
+      transition: 0.3s;  
+    }  
+  
+    .yes {  
+      background: #ff4d6d;  
+      color: white;  
+    }  
+  
+    .yes:hover {  
+      background: #ff1e4d;  
+      transform: scale(1.05);  
+    }  
+  
+    .no {  
+      background: white;  
+      color: #ff4d6d;  
+    }  
+  
+    .hidden {  
+      display: none;  
+    }  
+  
+    .heart {  
+      font-size: 3em;  
+      animation: beat 1s infinite;  
+    }  
+  
+    @keyframes beat {  
+      0%, 100% { transform: scale(1); }  
+      50% { transform: scale(1.2); }  
+    }  
+  </style>  
+</head>  
+<body>  
+  
+  <div class="card" id="question">  
+    <img src="us.jpg" alt="Us together">  
+    <h1>Leilah Caitlin 💕</h1>  
+    <p>  
+      Every moment with you feels like home.<br>  
+      Your smile, your kindness, your love—<br>  
+      I cherish all of it.  
+      <br><br>  
+      Will you be my Valentine?  
+    </p>  
+    <button class="yes" onclick="sayYes()">Yes 💖</button>  
+    <button class="no" onclick="moveNo()">No 🙈</button>  
+  </div>  
+  
+  <div class="card hidden" id="answer">  
+    <div class="heart">❤️</div>  
+    <h1>You said YES!</h1>  
+    <p>  
+      Thank you for choosing me.<br>  
+      I promise to love you, respect you,<br>  
+      and choose you—every single day.  
+      <br><br>  
+      Happy Valentine’s, my love 🥰  
+    </p>  
+  </div>  
+  
+  <script>  
+    function sayYes() {  
+      document.getElementById("question").classList.add("hidden");  
+      document.getElementById("answer").classList.remove("hidden");  
+    }  
+  
+    function moveNo() {  
+      const btn = document.querySelector(".no");  
+      btn.style.position = "absolute";  
+      btn.style.left = Math.random() * 80 + "%";  
+      btn.style.top = Math.random() * 80 + "%";  
+    }  
+  </script>  
+  
+</body>  
+</html>  
